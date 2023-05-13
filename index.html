@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+
+    <title>UI5 Web Components</title>
+
+    <!-----------------https://sap.github.io/ui5-webcomponents/playground/getting-started/first-steps/-->
+    <!---------------https://sdk.openui5.org/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#/overview/SAP-icons-TNT/?tab=grid-->
+
+    <!-- bootstrap the UI5 Web Components (as module for ES6 browsers, as non-module for ES5/IE11) -->
+    <script
+      src="https://sap.github.io/ui5-webcomponents/assets/js/ui5-webcomponents/bundle.esm.js"
+      type="module"
+    ></script>
+    <script
+      nomodule
+      src="https://sap.github.io/ui5-webcomponents/assets/js/ui5-webcomponents/bundle.es5.js"
+    ></script>
+
+    <script data-ui5-config type="application/json">
+      {
+        "theme": "sap_horizon"
+      }
+    </script>
+  </head>
+
+  <body style="height: 100%">
+    <ui5-shellbar
+      primary-title="Corporate Portal"
+      secondary-title="secondary title"
+    >
+      <ui5-avatar slot="profile" icon="customer"></ui5-avatar>
+      <img
+        slot="logo"
+        src="https://sap.github.io/ui5-webcomponents/assets/images/sap-logo-svg.svg"
+      />
+      <ui5-button icon="nav-back" slot="startButton"></ui5-button>
+    </ui5-shellbar>
+    <br>
+
+<ui5-title level="H5">Buttons</ui5-title>
+    <div>
+      <ui5-label>Label</ui5-label>
+      <ui5-button design="Default">Default</ui5-button>
+      <ui5-toggle-button>ToggleButton</ui5-toggle-button>
+      <ui5-segmented-button accessible-name="Geographic location">
+        <ui5-segmented-button-item>Map</ui5-segmented-button-item>
+        <ui5-segmented-button-item pressed>Satellite</ui5-segmented-button-item>
+        <ui5-segmented-button-item>Terrain</ui5-segmented-button-item>
+      </ui5-segmented-button>
+      <ui5-split-button>Default</ui5-split-button>
+    </div>
+<br>
+
+<ui5-title level="H5">Busy Indicator with different size</ui5-title>
+    <ui5-busy-indicator active size="Small"></ui5-busy-indicator>
+    <ui5-busy-indicator active size="Medium"></ui5-busy-indicator>
+    <ui5-busy-indicator active size="Large"></ui5-busy-indicator>
+<br>
+
+<ui5-title level="H5">Basic Badge</ui5-title>
+    <ui5-badge color-scheme="1">available 1</ui5-badge>
+    <ui5-badge color-scheme="2">required 2</ui5-badge>
+    <ui5-badge color-scheme="3">3</ui5-badge>
+    <ui5-badge color-scheme="4">bug 4</ui5-badge>
+    <ui5-badge color-scheme="5">in process 5</ui5-badge>
+    <ui5-badge color-scheme="6">in warehouse 6</ui5-badge>
+    <ui5-badge color-scheme="7">7</ui5-badge>
+    <ui5-badge color-scheme="8">solution provided 8</ui5-badge>
+    <ui5-badge color-scheme="9">pending release 9</ui5-badge>
+    <ui5-badge color-scheme="10">customer action 10</ui5-badge>
+    <ui5-badge style="width:200px;">This would truncate as it is too long</ui5-badge>
+<br><br>
+
+<ui5-title level="H5">ComboBox - Filters</ui5-title>
+<ui5-combobox placeholder="Contains" filter="Contains">
+	<ui5-cb-item text="Austria"></ui5-cb-item>
+	<ui5-cb-item text="Bulgaria"></ui5-cb-item>
+	<ui5-cb-item text="Germany"></ui5-cb-item>
+	<ui5-cb-item text="United Kingdom"></ui5-cb-item>
+	<ui5-cb-item text="Kazakhstan"></ui5-cb-item>
+</ui5-combobox>
+<br><br>
+
+<ui5-title level="H5">Basic Icons</ui5-title>
+    <ui5-icon name="activate"></ui5-icon>
+    <ui5-icon name="activities"></ui5-icon>
+    <ui5-icon name="add-equipment"></ui5-icon>
+    <ui5-icon name="add-document"></ui5-icon>
+    <ui5-icon name="add-employee"></ui5-icon>
+<br><br>
+
+<ui5-title level="H5">Basic RadioButton Types</ui5-title>
+    <ui5-radio-button text="Option A" checked name="GroupA"></ui5-radio-button>
+    <ui5-radio-button text="Option B" value-state="None" name="GroupA"></ui5-radio-button>
+    <ui5-radio-button text="Option C" value-state="Warning" name="GroupA"></ui5-radio-button>
+    <ui5-radio-button text="Option D" value-state="Error" name="GroupA"></ui5-radio-button>
+    <ui5-radio-button text="Option C" value-state="Success" name="GroupA"></ui5-radio-button>
+    <ui5-radio-button text="Option D" value-state="Information" name="GroupA"></ui5-radio-button>
+    <ui5-radio-button text="Option E" disabled name="GroupA"></ui5-radio-button>
+    <ui5-radio-button text="Option F" readonly name="GroupA"></ui5-radio-button>
+    <br>
+
+<ui5-title level="H5">Input and Selection</ui5-title>
+    <div>
+      <ui5-input show-clear-icon value="Input"></ui5-input>
+      <ui5-multi-input value="multi input"></ui5-multi-input>
+      <ui5-select>
+        <ui5-option icon="iphone">Phone</ui5-option>
+        <ui5-option icon="ipad">Tablet</ui5-option>
+        <ui5-option icon="laptop" selected>Desktop</ui5-option>
+      </ui5-select>
+      <ui5-combobox placeholder="Enter value">
+        <ui5-cb-item text="Item 1"></ui5-cb-item>
+        <ui5-cb-item text="Item 2"></ui5-cb-item>
+        <ui5-cb-item text="Item 3"></ui5-cb-item>
+      </ui5-combobox>
+      <ui5-multi-combobox placeholder="Type your value">
+        <ui5-mcb-item selected text="UI5"></ui5-mcb-item>
+      </ui5-multi-combobox>
+      <ui5-time-picker id="timepicker1"></ui5-time-picker>
+      <ui5-date-picker id="timepicker1"></ui5-date-picker>
+      <ui5-step-input value="5" style="width: 10rem"></ui5-step-input>
+    </div>
+<br>
+
+<ui5-title level="H5">CheckBox</ui5-title>
+    <ui5-checkbox text="Chocolate" checked></ui5-checkbox>
+    <ui5-checkbox text="Strawberry" checked></ui5-checkbox>
+    <ui5-checkbox text="Waffles" checked value-state="Error"></ui5-checkbox>
+    <ui5-checkbox text="Cake" checked value-state="Warning"></ui5-checkbox>
+<br>
+
+
+<ui5-title level="H5">Horizontal Timeline</ui5-title>
+    <ui5-timeline layout="Horizontal">
+      <ui5-timeline-item id="test-item" title-text="called" subtitle-text="20.02.2017 11:30" icon="phone" name="John Smith" name-clickable></ui5-timeline-item>
+      <ui5-timeline-item title-text="Weekly Sync - CP Design" subtitle-text="27.07.2017 (11:00 - 12:30)" icon="calendar">
+        <div>MR SOF02 2.43</div>
+      </ui5-timeline-item>
+      <ui5-timeline-item title-text="Video Converence Call - UI5" subtitle-text="31.01.2018 (12:00 - 13:00)" icon="calendar">
+        <div>Online meeting</div>
+      </ui5-timeline-item>
+    </ui5-timeline>
+<br>
+
+<ui5-title level="H5">FloatingFooter Bar</ui5-title>
+    <ui5-bar design="FloatingFooter">
+      <ui5-button design="Positive" slot="endContent">Agree</ui5-button>
+      <ui5-button design="Negative" slot="endContent">Decline</ui5-button>
+      <ui5-button design="Transparent" slot="endContent">Cancel</ui5-button>
+    </ui5-bar>
+<br>
+
+<ui5-title level="H5">TabContainer with text only tabs</ui5-title>
+    <ui5-tabcontainer class="full-width" collapsed fixed>
+      <ui5-tab text="Home"></ui5-tab>
+      <ui5-tab text="What's new" selected></ui5-tab>
+      <ui5-tab text="Who are we"></ui5-tab>
+      <ui5-tab text="About"></ui5-tab>
+    <ui5-tab text="Contacts"></ui5-tab>
+    </ui5-tabcontainer>
+<br><br>
+
+<ui5-title level="H5">Graphical Switch</ui5-title>
+    <ui5-switch accessible-name="graphical" design="Graphical"></ui5-switch>
+    <ui5-switch accessible-name="graphical" design="Graphical" checked></ui5-switch>
+    <ui5-switch accessible-name="graphical" design="Graphical" disabled></ui5-switch>
+    <ui5-switch accessible-name="graphical" design="Graphical" checked disabled></ui5-switch>
+<br>
+
+<ui5-title level="H5">Calendar with Hidden Week Numbers</ui5-title>
+    <ui5-calendar hide-week-numbers></ui5-calendar>
+<br>
+
+<br><br><br>
+<ui5-title level="H5">Table</ui5-title>
+    <ui5-table class="demo-table" id="table" mode="MultiSelect">
+        <!-- Columns -->
+        <ui5-table-column slot="columns">
+            <span style="line-height: 1.4rem">Product</span>
+        </ui5-table-column>
+    
+        <ui5-table-column slot="columns" min-width="800">
+            <span style="line-height: 1.4rem">Supplier</span>
+        </ui5-table-column>
+    
+        <ui5-table-column slot="columns" min-width="600" popin-text="Dimensions" demand-popin class="table-header-text-alignment">
+            <span style="line-height: 1.4rem">Dimensions</span>
+        </ui5-table-column>
+    
+        <ui5-table-column slot="columns" min-width="600" popin-text="Weight" demand-popin class="table-header-text-alignment">
+            <span style="line-height: 1.4rem">Weight</span>
+        </ui5-table-column>
+    
+        <ui5-table-column slot="columns" class="table-header-text-alignment">
+            <span style="line-height: 1.4rem">Price</span>
+        </ui5-table-column>
+    
+        <ui5-table-row>
+            <ui5-table-cell>Notebook Basic 15HT-1000</ui5-table-cell>
+            <ui5-table-cell>Very Best Screens</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">30 x 18 x 3cm</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">4.2KG</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">956EUR</ui5-table-cell>
+        </ui5-table-row>
+    
+        <ui5-table-row>
+            <ui5-table-cell>Notebook Basic 17HT-1001</ui5-table-cell>
+            <ui5-table-cell>Very Best Screens</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">29 x 17 x 3.1cm</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">4.5KG</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">1249EUR</ui5-table-cell>
+        </ui5-table-row>
+    
+        <ui5-table-row>
+            <ui5-table-cell>Notebook Basic 18HT-1002</ui5-table-cell>
+            <ui5-table-cell>Very Best Screens</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">28 x 19 x 2.5cm</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">4.2KG</ui5-table-cell>
+            <ui5-table-cell style="text-align: right">1570EUR</ui5-table-cell>
+        </ui5-table-row>
+    </ui5-table>
+
+
+
+
+
+  </body>
+</html>
