@@ -12,3 +12,8 @@ SAP UI5 Webcomponents
 ## Steps
 Open index.html and preview which will provide some examples for UI5 WebComponents
 
+
+### New Changes
+* https://ui5-community.github.io/ui5-webcomponents-bundle/assets/bundle.esm.js
+
+* 
